@@ -10,39 +10,15 @@
 </head>
 <body ng-app="App">
   <div ng-controller="AppController as people">
-
-  <!-- Рабочий вариант  -->
-
-    <label>
-      <input type="radio" ng-model="name" value="Иванов Иван Иванович">Иванов Иван Иванович
-    </label><br/>
-    <label>
-      <input type="radio" ng-model="name" value="Петров Петр Петрович">Петров Петр Петрович
-    </label><br/>
-    <label>
-      <input type="radio" ng-model="name" value="Алексеев Алексей Алексеевич">Алексеев Алексей Алексеевич
-    </label><br/>
-
-    <tt>Добро пожаловать, {{name}}!</tt><br/>
-
-    <!--  -->
-
-    <!-- Через ng-repeat -->
-
     <ul>
       <li ng-repeat="person in people.list">
         <label>
-          <input type="radio" name="name" ng-model="personName" value="{{person.name}}">{{person.name}}
+          <input type="radio" name="name" ng-model="people.fullName" value="{{person.name}}">{{person.name}}
         </label>
-
-        <tt>Добро пожаловать, {{personName}}!</tt> <!-- Выводится здесь только для каждого инпута отдельно -->
       </li>
     </ul>
 
-    <tt>Добро пожаловать, {{personName}}!</tt> <!-- Не выводится здесь в общий тэг для всех инпутов-->
-
-    <!--  -->
-
+    <tt>Добро пожаловать, {{people.fullName}}!</tt>
   </div>
 </body>
 </html>
